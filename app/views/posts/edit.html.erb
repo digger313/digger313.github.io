@@ -1,9 +1,16 @@
 <div class="container">
-    <h2>編集</h2>
-    <% @post.errors.full_messages.each do |message| %>
-    <div class="form-error">
+  <h2>編集</h2>
+  <% @post.errors.full_messages.each do |message| %>
+  <div class="form-error">
     <%= message %>
-    </div>
-    <% end %>
-<%= render 'form' %>
+  </div>
+  <% end %>
+  <%= form_for @post do |f| %>
+  <p>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
 </div>

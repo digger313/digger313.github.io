@@ -2,11 +2,8 @@
   <h2>投稿一覧</h2>
   <% @posts.each do |post| %>
   <div class="posts-index-item">
-    <div class="user-right">
-      <%= link_to post.content, post_path(post) %>
-    </div>
+    <%= link_to post.content, post_path(post) %>
   </div>
   <% end %>
-
+  <%= paginate @posts %>
 </div>
-<%= paginate @posts %>

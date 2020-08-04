@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
+  #ログインユーザーのみアクセス可能
   before_action :authenticate_user,{only: [:index, :show, :edit, :update]}
-
+  #ログインユーザーはアクセスできない
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   #異なるユーザー情報の編集をさせない
   before_action :ensure_correct_user, {only: [:edit, :update]}
 
   def index
     @users = User.all.page(params[:page]).per(10)
-      end
+  end
 
   def show
     @user = User.find_by(id: params[:id])
@@ -21,10 +22,10 @@ class UsersController < ApplicationController
     @user = User.new(params_permit)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "成功"
-      redirect_to("/users")
+      flash[:notice] = "ユーザー情報を登録しました"
+      redirect_to users_path
     else
-      render 'new'
+      render action:  :new
     end
 
   end
@@ -66,7 +67,7 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("/login")
+    redirect_to login_path
   end
 
 

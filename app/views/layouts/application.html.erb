@@ -7,8 +7,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </head>
 
@@ -21,8 +21,8 @@
     <% if @current_user %>
     <nav>
       <ul>
-        <li>
-          <%= link_to @current_user.name, "/users/#{@current_user.id}" %>
+        <li class="username-item">
+          <%= link_to @current_user.name, user_path(@current_user) %>
         </li>
         <li>
           <%= link_to '新規投稿', new_post_path, class: 'header-menu' %>

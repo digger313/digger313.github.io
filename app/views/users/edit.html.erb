@@ -6,12 +6,12 @@
   </div>
   <% end %>
   <%= form_for @user, url: user_path(@user) do |f| %>
-      <p>ユーザー名</p>
+  <p>ユーザー名</p>
   <p><input name="name" value="<%= @user.name %>"></p>
   <p>メールアドレス</p>
   <p><input name="email" value="<%= @user.email %>"></p>
   <p>
-  <%= f.submit %>
+    <%= f.submit %>
   </p>
   <% end %>
 </div>

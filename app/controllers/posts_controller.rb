@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
+  #ログインユーザーのみアクセス可能
   before_action :authenticate_user
-
+  #異なるユーザー情報の編集をさせない
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def index
-    @posts = Post.all.order(created_at: 'desc')
-    @posts = Post.page(params[:page]).per(10)
+    @posts = Post.all.order(created_at: 'desc').page(params[:page]).per(10)
   end
 
   def new
@@ -22,11 +22,11 @@ class PostsController < ApplicationController
       content: params[:content],
       user_id: @current_user.id
     )
-      if @post.save
+    if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to posts_path
     else
-      render("posts/new")
+      render action: :new
     end
   end
 
@@ -50,12 +50,12 @@ class PostsController < ApplicationController
   end
 
   def ensure_correct_user
-  @post = Post.find_by(id: params[:id])
-  if @post.user_id != @current_user.id
-    flash[:notice] = "権限がありません"
-    redirect_to posts_path
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to posts_path
+    end
   end
-end
 
   private
   def params_permit

@@ -1,33 +1,21 @@
-<div class="main posts-show">
-  <div class="container">
-    <div class="posts-show-item">
-      <div class="post-user-name">
-
-        <div class="post-user-name">
-               <!-- ユーザーの画像が表示されるように、以下のsrcの中を埋めてください -->
-
-
-               <!-- link_toメソッドを用いて、ユーザー詳細ページへのリンクを作成してください -->
-              
-             </div>
-      </div>
-      <p>
-        <%= @post.content %>
-      </p>
-      <div class="post-time">
-        <%= @post.created_at %>
-      </div>
-      <!-- 以下の<% %>を使ってif文を追加してください -->
-      <% if @post.user_id == @current_user.id%>
-        <div class="post-menus">
-        <%= link_to '[編集]', edit_post_path(@post), class: 'command' %>
-        <%= link_to '[削除]',
-          post_path(@post),
-          method: :delete,
-          data: { confirm: 'Sure?' } %>
-        </div>
-      <!-- 以下の<% %>を使ってif文のendを追加してください -->
-      <% end %>
+<div class="container">
+  <h3>
+    投稿者: <%= @user.name%>
+  </h3>
+  <p class="content">
+    <%= @post.content %>
+  </p>
+  <% if @post.user_id == @current_user.id%>
+  <div class="btn-wrapper">
+    <div class="btn">
+      <%= link_to '編集する', edit_post_path(@post), class: 'command' %>
+    </div>
+    <div class="btn">
+      <%= link_to '削除する',
+      post_path(@post),
+      method: :delete,
+      data: { confirm: 'Sure?' } %>
     </div>
   </div>
+  <% end %>
 </div>
