@@ -27,7 +27,7 @@ textarea {
   word-break: break-all;
 }
 
-.btn {
+.button {
   margin: 2em 0;
   font-weight: bold;
   border: solid 2px black;
@@ -37,17 +37,16 @@ textarea {
   display: inline-block;
 }
 
-.btn a {
+.button a {
   display: block;
   padding: 0.5em 1em;
 }
 
-.btn a:hover {
+.button a:hover {
   display: block;
   padding: 0.5em 1em;
   background: #333333;
 }
-
 
 .btn-wrapper {
   text-align: center;

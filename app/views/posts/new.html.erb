@@ -6,7 +6,11 @@
   </div>
   <% end %>
   <%= form_tag("/posts") do %>
+  <p>
   <textarea name="content"><%= @post.content %></textarea>
+  </p>
+  <p>
   <input type="submit" value="投稿">
+  </p>
   <% end %>
 </div>
