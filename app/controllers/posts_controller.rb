@@ -21,10 +21,11 @@ class PostsController < ApplicationController
       content: params[:content],
       user_id: @current_user.id
     )
-    if @post.save
+      if @post.save
+      flash[:notice] = "投稿を作成しました"
       redirect_to posts_path
     else
-      render action: :new
+      render("posts/new")
     end
   end
 
