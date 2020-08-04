@@ -1,0 +1,16 @@
+<div class="container">
+  <% if @error_message %>
+  <div class="form-error">
+    <%= @error_message %>
+  </div>
+  <% end %>
+  <h2>ログイン</h2>
+
+  <%= form_for :user, url: login_path do |f| %>
+  <p>メールアドレス</p>
+  <p><input name="email" value="<%= @email %>"></p>
+  <p>パスワード</p>
+  <p><input type="password" name="password" value="<%= @password %>"></p>
+  <input type="submit" value="ログイン">
+  <% end %>
+</div>

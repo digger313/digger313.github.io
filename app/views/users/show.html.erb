@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="box17">
+    <div class="show-title">名前:</div>
+      <span class="show-item"><%= @user.name %></span>
+    <div class="show-title">
+      <p>メールアドレス:</p>
+    </div>
+    <span class="show-item"><%= @user.email %></span>
+  </div>
+  <% if @user.id == @current_user.id %>
+    <div class="edit">
+    <%= link_to "編集する", edit_user_path %>
+    </div>
+    <% end %>
+</div>

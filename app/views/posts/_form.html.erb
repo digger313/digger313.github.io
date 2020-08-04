@@ -1,0 +1,6 @@
+<%= form_for :posts, url: posts_path do |f| %>
+<textarea name="content"><%= @post.content %></textarea>
+<p>
+  <input type="submit" value="投稿">
+</p>
+<% end %>

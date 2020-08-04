@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>ユーザー一覧</h2>
+  <% @users.each do |user| %>
+  <div class="posts-index-item">
+    <div class="user-right">
+      <%= link_to user.name, user_path(user) %>
+    </div>
+  </div>
+  <% end %>
+  <%= paginate @users %>
+</div>

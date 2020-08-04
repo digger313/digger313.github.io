@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>新規投稿</h2>
+    <% @post.errors.full_messages.each do |message| %>
+    <div class="form-error">
+    <%= message %>
+    </div>
+    <% end %>
+    <%= render 'form' %>
+</div>

@@ -1,0 +1,107 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #e6e6e6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  clear: both;
+}
+
+.container h2, form {
+  text-align: center;
+}
+
+
+header {
+  padding: 30px 4% 10px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+
+h1 {
+  margin: 0; padding: 0;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin: 0 0 0 15px;
+  font-size: 14px;
+}
+
+input {
+  width: 50%;
+}
+
+input[type="submit"] {
+  width: 100%;
+  width: 40%;
+  padding: 15px 10px;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background-color: #808080;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.12), 0 3px 20px 0 rgba(0,0,0,.12), 0 5px 6px -2px rgba(0,0,0,.2);
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 5px;
+}
+
+nav {
+  margin: 0 0 0 auto;
+}
+
+.form-error {
+  text-align: center;
+  color: #ff4d75;
+}
+
+.flash {
+  padding: 10px 0;
+  color: white;
+  background-color: #696969;
+  text-align: center;
+  top: 64px;
+  z-index: 10;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+}
